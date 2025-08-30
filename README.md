@@ -83,6 +83,11 @@ All apps are deployed and accessible at: **https://jamesanz.github.io/trending-a
   - Built around trending Deion Sanders' impact and College Football season
   - Port 8004 for local development
 
+- **AI Wellness Hub** - [View App](https://jamesanz.github.io/trending-app-factory/apps/ai-wellness-hub/index.html)
+  - The future of personalized health & fitness through AI technology
+  - Built around trending $34.73B AI wellness market and personalized health trends
+  - Port 8005 for local development
+
 > **⚠️ Important**: This section must be updated each time a new app is added, removed, or modified. Keep the live links current and accurate.
 
 ## 🎨 App Requirements
