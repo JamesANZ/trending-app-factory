@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Simple Development - Do the Simplest Thing That Could Possibly Work
+    </title>
+    <meta
+      name="description"
+      content="Master the art of simple development with practical guides, tools, and principles. Based on trending software development philosophy from Hacker News."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="logo">
+            <h1>🚀 Simple Dev</h1>
+            <p>Do the simplest thing that could possibly work</p>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#principles" class="nav-link">Principles</a></li>
+            <li><a href="#tools" class="nav-link">Tools</a></li>
+            <li><a href="#examples" class="nav-link">Examples</a></li>
+            <li><a href="#community" class="nav-link">Community</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              Do the Simplest Thing That Could Possibly Work
+            </h1>
+            <p class="hero-subtitle">
+              Master the art of simple development with practical principles
+              that have been trending on Hacker News
+            </p>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">436</span>
+                <span class="stat-label">Points</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">185</span>
+                <span class="stat-label">Comments</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">#1</span>
+                <span class="stat-label">Trending</span>
+              </div>
+            </div>
+            <div class="hero-actions">
+              <a href="#principles" class="btn btn-primary">Learn Principles</a>
+              <a href="#examples" class="btn btn-secondary">See Examples</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="code-snippet">
+              <div class="code-header">
+                <span class="code-dot red"></span>
+                <span class="code-dot yellow"></span>
+                <span class="code-dot green"></span>
+                <span class="code-title">simple.js</span>
+              </div>
+              <pre><code>// The simplest thing that could possibly work
+function solve(problem) {
+    // Start with the obvious solution
+    if (problem.hasObviousSolution()) {
+        return problem.obviousSolution();
+    }
+    
+    // Break it down into smaller problems
+    const subProblems = problem.breakDown();
+    
+    // Solve each sub-problem simply
+    return subProblems.map(solve);
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="principles" class="principles">
+        <div class="container">
+          <h2 class="section-title">Core Principles</h2>
+          <p class="section-subtitle">
+            The fundamental principles that guide simple development
+          </p>
+
+          <div class="principles-grid">
+            <div class="principle-card">
+              <div class="principle-icon">🎯</div>
+              <h3>Start Simple</h3>
+              <p>
+                Begin with the most obvious, straightforward solution. Don't
+                over-engineer from the start.
+              </p>
+              <ul class="principle-list">
+                <li>Use built-in language features</li>
+                <li>Avoid premature optimization</li>
+                <li>Focus on functionality first</li>
+              </ul>
+            </div>
+
+            <div class="principle-card">
+              <div class="principle-icon">🔄</div>
+              <h3>Iterate Gradually</h3>
+              <p>
+                Build incrementally, adding complexity only when the simple
+                solution proves insufficient.
+              </p>
+              <ul class="principle-list">
+                <li>Make it work, then make it better</li>
+                <li>Refactor when needed, not preemptively</li>
+                <li>Learn from real usage patterns</li>
+              </ul>
+            </div>
+
+            <div class="principle-card">
+              <div class="principle-icon">🧩</div>
+              <h3>Break It Down</h3>
+              <p>
+                Complex problems become manageable when broken into smaller,
+                simpler pieces.
+              </p>
+              <ul class="principle-list">
+                <li>Identify the core problem</li>
+                <li>Split into sub-problems</li>
+                <li>Solve each piece simply</li>
+              </ul>
+            </div>
+
+            <div class="principle-card">
+              <div class="principle-icon">✅</div>
+              <h3>Validate Early</h3>
+              <p>
+                Test your simple solution early to ensure it actually solves the
+                real problem.
+              </p>
+              <ul class="principle-list">
+                <li>Get feedback from users</li>
+                <li>Test with real data</li>
+                <li>Measure actual outcomes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tools" class="tools">
+        <div class="container">
+          <h2 class="section-title">Simple Development Tools</h2>
+          <p class="section-subtitle">Tools that help you keep things simple</p>
+
+          <div class="tools-grid">
+            <div class="tool-card">
+              <div class="tool-header">
+                <h3>Minimal Frameworks</h3>
+                <span class="tool-tag">Essential</span>
+              </div>
+              <p>Use lightweight frameworks that don't force complexity</p>
+              <div class="tool-examples">
+                <span class="tool-example">Express.js</span>
+                <span class="tool-example">Flask</span>
+                <span class="tool-example">Sinatra</span>
+              </div>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-header">
+                <h3>Simple Testing</h3>
+                <span class="tool-tag">Testing</span>
+              </div>
+              <p>Testing frameworks that encourage simple, readable tests</p>
+              <div class="tool-examples">
+                <span class="tool-example">Jest</span>
+                <span class="tool-example">Pytest</span>
+                <span class="tool-example">RSpec</span>
+              </div>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-header">
+                <h3>Version Control</h3>
+                <span class="tool-tag">Collaboration</span>
+              </div>
+              <p>Simple version control workflows that don't get in the way</p>
+              <div class="tool-examples">
+                <span class="tool-example">Git</span>
+                <span class="tool-example">GitHub Flow</span>
+                <span class="tool-example">Trunk-based</span>
+              </div>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-header">
+                <h3>Simple Deployment</h3>
+                <span class="tool-tag">DevOps</span>
+              </div>
+              <p>Deployment tools that make shipping simple</p>
+              <div class="tool-examples">
+                <span class="tool-example">Vercel</span>
+                <span class="tool-example">Netlify</span>
+                <span class="tool-example">Heroku</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="examples" class="examples">
+        <div class="container">
+          <h2 class="section-title">Real-World Examples</h2>
+          <p class="section-subtitle">
+            How simple development works in practice
+          </p>
+
+          <div class="examples-grid">
+            <div class="example-card">
+              <div class="example-header">
+                <h3>Problem: User Authentication</h3>
+                <span class="example-difficulty">Easy</span>
+              </div>
+              <div class="example-content">
+                <h4>Complex Approach ❌</h4>
+                <pre><code>// OAuth, JWT, refresh tokens, 
+// rate limiting, session management
+// 500+ lines of code</code></pre>
+
+                <h4>Simple Approach ✅</h4>
+                <pre><code>// Start with basic username/password
+// Store in database with bcrypt
+// Simple session cookies
+// ~50 lines of code</code></pre>
+              </div>
+            </div>
+
+            <div class="example-card">
+              <div class="example-header">
+                <h3>Problem: Data Processing</h3>
+                <span class="example-difficulty">Medium</span>
+              </div>
+              <div class="example-content">
+                <h4>Complex Approach ❌</h4>
+                <pre><code>// Custom streaming pipeline
+// Memory optimization
+// Parallel processing
+// Complex error handling</code></pre>
+
+                <h4>Simple Approach ✅</h4>
+                <pre><code>// Read file into memory
+// Process with array methods
+// Handle errors with try/catch
+// ~30 lines of code</code></pre>
+              </div>
+            </div>
+
+            <div class="example-card">
+              <div class="example-header">
+                <h3>Problem: API Design</h3>
+                <span class="example-difficulty">Hard</span>
+              </div>
+              <div class="example-content">
+                <h4>Complex Approach ❌</h4>
+                <pre><code>// GraphQL, subscriptions
+// Real-time updates
+// Complex caching
+// Microservices</code></pre>
+
+                <h4>Simple Approach ✅</h4>
+                <pre><code>// REST endpoints
+// JSON responses
+// Simple database queries
+// ~100 lines of code</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="community" class="community">
+        <div class="container">
+          <h2 class="section-title">Join the Simple Development Community</h2>
+          <p class="section-subtitle">
+            Connect with developers who believe in keeping things simple
+          </p>
+
+          <div class="community-content">
+            <div class="community-info">
+              <h3>Why Simple Development?</h3>
+              <p>
+                Based on the trending discussion on Hacker News, developers are
+                increasingly recognizing the value of simple, straightforward
+                solutions over complex, over-engineered systems.
+              </p>
+
+              <div class="community-stats">
+                <div class="community-stat">
+                  <span class="stat-number">436</span>
+                  <span class="stat-label">Upvotes</span>
+                </div>
+                <div class="community-stat">
+                  <span class="stat-number">185</span>
+                  <span class="stat-label">Comments</span>
+                </div>
+                <div class="community-stat">
+                  <span class="stat-number">#1</span>
+                  <span class="stat-label">Trending Topic</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="newsletter-signup">
+              <h3>Stay Updated</h3>
+              <p>Get the latest simple development tips and trending topics</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required />
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Simple Development</h3>
+            <p>Do the simplest thing that could possibly work</p>
+          </div>
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#principles">Principles</a></li>
+              <li><a href="#tools">Tools</a></li>
+              <li><a href="#examples">Examples</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="#community">Join Us</a></li>
+              <li>
+                <a
+                  href="https://news.ycombinator.com/item?id=45068091"
+                  target="_blank"
+                  >Hacker News Discussion</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.seangoedecke.com/the-simplest-thing-that-could-possibly-work/"
+                  target="_blank"
+                  >Original Article</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Simple Development. Based on trending topics from Hacker
+            News.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "name": "trending-news-hub",
+  "version": "1.0.0",
+  "description": "Your daily source for what's trending across politics, sports, entertainment, technology, health, and space. Real-time trending topics from multiple sources.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8002",
+    "dev": "python3 -m http.server 8002",
+    "serve": "python3 -m http.server 8002",
+    "build": "echo 'No build step required - static HTML/CSS/JS app'",
+    "deploy": "echo 'Ready to deploy to any static hosting service'",
+    "test": "echo 'Open index.html in a browser to test'"
+  },
+  "keywords": [
+    "trending-news",
+    "news-hub",
+    "politics",
+    "sports",
+    "entertainment",
+    "technology",
+    "health",
+    "space",
+    "real-time-news",
+    "breaking-news",
+    "news-aggregator",
+    "current-events"
+  ],
+  "author": "Trending News Hub Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trending-news-hub/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trending-news-hub/website/issues"
+  },
+  "homepage": "https://trending-news-hub.com",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "simple-development",
+  "version": "1.0.0",
+  "description": "Master the art of simple development with practical guides, tools, and principles. Based on trending software development philosophy from Hacker News.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8001",
+    "dev": "python3 -m http.server 8001",
+    "serve": "python3 -m http.server 8001",
+    "build": "echo 'No build step required - static HTML/CSS/JS app'",
+    "deploy": "echo 'Ready to deploy to any static hosting service'",
+    "test": "echo 'Open index.html in a browser to test'"
+  },
+  "keywords": [
+    "simple-development",
+    "software-development",
+    "programming",
+    "coding",
+    "principles",
+    "hacker-news",
+    "trending",
+    "minimal",
+    "clean-code",
+    "development-philosophy"
+  ],
+  "author": "Simple Development Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simple-development/simple-development-app"
+  },
+  "homepage": "https://simple-development.app",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
