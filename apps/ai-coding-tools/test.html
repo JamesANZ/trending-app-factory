@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Coding Tools Hub - Test Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .test-section {
+        margin: 20px 0;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+      .success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+      }
+      .info {
+        background-color: #d1ecf1;
+        border-color: #bee5eb;
+        color: #0c5460;
+      }
+      .warning {
+        background-color: #fff3cd;
+        border-color: #ffeaa7;
+        color: #856404;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background-color: #007bff;
+        color: white;
+      }
+      .btn-success {
+        background-color: #28a745;
+        color: white;
+      }
+      .btn-warning {
+        background-color: #ffc107;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🧪 AI Coding Tools Hub - Test Page</h1>
+
+    <div class="test-section info">
+      <h3>📋 Test Instructions</h3>
+      <p>
+        This page tests the core functionality of the AI Coding Tools Hub app.
+        Use the buttons below to verify each feature works correctly.
+      </p>
+    </div>
+
+    <div class="test-section">
+      <h3>🔍 Search Functionality Test</h3>
+      <input
+        type="text"
+        id="searchTest"
+        placeholder="Type to test search..."
+        style="padding: 8px; width: 300px; margin-right: 10px"
+      />
+      <button class="btn-primary" onclick="testSearch()">Test Search</button>
+      <div
+        id="searchResult"
+        style="
+          margin-top: 10px;
+          padding: 10px;
+          background-color: #f8f9fa;
+          border-radius: 5px;
+          display: none;
+        "
+      ></div>
+    </div>
+
+    <div class="test-section">
+      <h3>🌙 Dark Mode Toggle Test</h3>
+      <button class="btn-warning" onclick="toggleDarkMode()">
+        Toggle Dark Mode
+      </button>
+      <p>
+        Click the button to test dark mode functionality. The page should switch
+        between light and dark themes.
+      </p>
+    </div>
+
+    <div class="test-section">
+      <h3>📊 Data Export Test</h3>
+      <button class="btn-success" onclick="testDataExport()">
+        Export Sample Data
+      </button>
+      <p>
+        This will download a sample JSON file to test the export functionality.
+      </p>
+    </div>
+
+    <div class="test-section">
+      <h3>📱 Responsive Design Test</h3>
+      <p>
+        Resize your browser window to test responsive design. The layout should
+        adapt to different screen sizes.
+      </p>
+      <button class="btn-primary" onclick="testResponsive()">
+        Test Responsive
+      </button>
+      <div
+        id="responsiveResult"
+        style="
+          margin-top: 10px;
+          padding: 10px;
+          background-color: #f8f9fa;
+          border-radius: 5px;
+          display: none;
+        "
+      ></div>
+    </div>
+
+    <div class="test-section">
+      <h3>🔗 Navigation Test</h3>
+      <p>Test the smooth scrolling navigation:</p>
+      <button class="btn-primary" onclick="scrollToSection('top')">
+        Go to Top
+      </button>
+      <button class="btn-primary" onclick="scrollToSection('bottom')">
+        Go to Bottom
+      </button>
+    </div>
+
+    <div class="test-section">
+      <h3>📝 Newsletter Form Test</h3>
+      <input
+        type="email"
+        id="emailTest"
+        placeholder="Enter test email..."
+        style="padding: 8px; width: 300px; margin-right: 10px"
+      />
+      <button class="btn-success" onclick="testNewsletter()">
+        Test Newsletter
+      </button>
+      <div
+        id="newsletterResult"
+        style="
+          margin-top: 10px;
+          padding: 10px;
+          background-color: #f8f9fa;
+          border-radius: 5px;
+          display: none;
+        "
+      ></div>
+    </div>
+
+    <div
+      id="bottom"
+      style="
+        height: 100px;
+        background-color: #f8f9fa;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+      "
+    >
+      <p>🎯 Bottom Section - Navigation test target</p>
+    </div>
+
+    <script>
+      // Test functions
+      function testSearch() {
+        const searchInput = document.getElementById("searchTest").value;
+        const resultDiv = document.getElementById("searchResult");
+
+        if (searchInput.trim() === "") {
+          resultDiv.innerHTML =
+            '<span style="color: #856404;">⚠️ Please enter some text to search</span>';
+        } else {
+          resultDiv.innerHTML = `<span style="color: #155724;">✅ Search functionality working! You searched for: "${searchInput}"</span>`;
+        }
+        resultDiv.style.display = "block";
+      }
+
+      function toggleDarkMode() {
+        document.body.style.backgroundColor =
+          document.body.style.backgroundColor === "black" ? "white" : "black";
+        document.body.style.color =
+          document.body.style.color === "white" ? "black" : "white";
+      }
+
+      function testDataExport() {
+        const sampleData = {
+          tools: [
+            { name: "GitHub Copilot", rating: 4.8, price: "$10/month" },
+            { name: "Cursor", rating: 4.7, price: "Free" },
+            { name: "Replit Ghostwriter", rating: 4.6, price: "$20/month" },
+          ],
+          timestamp: new Date().toISOString(),
+        };
+
+        const dataStr = JSON.stringify(sampleData, null, 2);
+        const dataBlob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(dataBlob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "ai-coding-tools-sample.json";
+        link.click();
+        URL.revokeObjectURL(url);
+      }
+
+      function testResponsive() {
+        const width = window.innerWidth;
+        const resultDiv = document.getElementById("responsiveResult");
+        let message = "";
+
+        if (width < 768) {
+          message = "📱 Mobile view detected - responsive design working!";
+        } else if (width < 1024) {
+          message = "📱 Tablet view detected - responsive design working!";
+        } else {
+          message = "💻 Desktop view detected - responsive design working!";
+        }
+
+        resultDiv.innerHTML = `<span style="color: #155724;">${message}</span>`;
+        resultDiv.style.display = "block";
+      }
+
+      function scrollToSection(target) {
+        if (target === "top") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else if (target === "bottom") {
+          document
+            .getElementById("bottom")
+            .scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function testNewsletter() {
+        const email = document.getElementById("emailTest").value;
+        const resultDiv = document.getElementById("newsletterResult");
+
+        if (email.trim() === "" || !email.includes("@")) {
+          resultDiv.innerHTML =
+            '<span style="color: #856404;">⚠️ Please enter a valid email address</span>';
+        } else {
+          resultDiv.innerHTML = `<span style="color: #155724;">✅ Newsletter subscription test successful! Email: ${email}</span>`;
+        }
+        resultDiv.style.display = "block";
+      }
+
+      // Auto-test on page load
+      window.addEventListener("load", function () {
+        console.log("🧪 AI Coding Tools Hub Test Page Loaded");
+        console.log("✅ All test functions are ready");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+{
+  "name": "ai-coding-tools-hub",
+  "version": "1.0.0",
+  "description": "A comprehensive guide to AI-powered development tools and resources",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "build": "echo 'No build step required - static HTML/CSS/JS app'",
+    "deploy": "echo 'Ready to deploy to any static hosting service'",
+    "test": "echo 'Open index.html in a browser to test'"
+  },
+  "keywords": [
+    "ai",
+    "coding",
+    "tools",
+    "development",
+    "programming",
+    "github-copilot",
+    "cursor",
+    "replit",
+    "claude",
+    "codeium",
+    "tabnine"
+  ],
+  "author": "AI Coding Tools Hub",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-coding-tools-hub.git"
+  },
+  "homepage": "https://yourusername.github.io/ai-coding-tools-hub",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "features": [
+    "Responsive design",
+    "Interactive tool comparison",
+    "Search functionality",
+    "Dark mode toggle",
+    "Newsletter subscription",
+    "Export comparison data",
+    "Smooth animations",
+    "Keyboard navigation",
+    "Accessibility features"
+  ],
+  "deployment": {
+    "netlify": {
+      "build": "echo 'No build required'",
+      "publish": "."
+    },
+    "vercel": {
+      "build": "echo 'No build required'",
+      "output": "."
+    },
+    "github-pages": {
+      "source": "main",
+      "branch": "gh-pages"
+    }
+  }
+}
