@@ -1,0 +1,41 @@
+{
+  "name": "college-football-hub",
+  "version": "1.0.0",
+  "description": "Your ultimate source for College Football news, rankings, and fantasy insights. Covering Deion Sanders' impact, team rankings, star players, and fantasy strategies.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8004",
+    "dev": "python3 -m http.server 8004",
+    "serve": "python3 -m http.server 8004",
+    "build": "echo 'No build step required - static HTML/CSS/JS app'",
+    "deploy": "echo 'Ready to deploy to any static hosting service'",
+    "test": "echo 'Open index.html in a browser to test'"
+  },
+  "keywords": [
+    "college-football",
+    "deion-sanders",
+    "colorado-buffaloes",
+    "fantasy-football",
+    "heisman-trophy",
+    "ncaa-football",
+    "team-rankings",
+    "college-sports",
+    "football-news",
+    "sports-hub",
+    "trending-sports",
+    "college-athletics"
+  ],
+  "author": "AI Agent",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/college-football-hub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/college-football-hub/issues"
+  },
+  "homepage": "https://yourusername.github.io/college-football-hub",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
