@@ -1,0 +1,46 @@
+{
+  "name": "ai-wellness-hub",
+  "version": "1.0.0",
+  "description": "The Future of Personalized Health & Fitness - AI-powered wellness solutions and personalized health tracking. Join the $34.73B AI wellness revolution.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8005",
+    "dev": "python3 -m http.server 8005",
+    "serve": "python3 -m http.server 8005",
+    "build": "echo 'No build step required - static HTML/CSS/JS app'",
+    "deploy": "echo 'Ready to deploy to any static hosting service'",
+    "test": "echo 'Open index.html in a browser to test'"
+  },
+  "keywords": [
+    "ai-wellness",
+    "artificial-intelligence",
+    "health-technology",
+    "personalized-fitness",
+    "wellness-apps",
+    "ai-fitness",
+    "health-tech",
+    "digital-health",
+    "smart-wellness",
+    "ai-coaching",
+    "personalized-nutrition",
+    "mental-health-ai",
+    "fitness-technology",
+    "wellness-trends",
+    "health-innovation"
+  ],
+  "author": "AI Agent",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesanz/trending-app-factory.git"
+  },
+  "homepage": "https://jamesanz.github.io/trending-app-factory/apps/ai-wellness-hub/",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+} 
