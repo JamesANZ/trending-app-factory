@@ -88,6 +88,11 @@ All apps are deployed and accessible at: **https://jamesanz.github.io/trending-a
   - Built around trending $34.73B AI wellness market and personalized health trends
   - Port 8005 for local development
 
+- **Chinese Web Trends Hub** - [View App](https://jamesanz.github.io/trending-app-factory/apps/chinese-web-trends-hub/index.html)
+  - Discover the latest trends in Chinese internet technology, AI, satellite internet, Web3, and digital infrastructure
+  - Built around trending Chinese tech developments including AI forums, satellite internet, and quantum technology
+  - Port 8006 for local development
+
 > **⚠️ Important**: This section must be updated each time a new app is added, removed, or modified. Keep the live links current and accurate.
 
 ## 🎨 App Requirements
