@@ -1,0 +1,46 @@
+{
+  "name": "chinese-web-trends-hub",
+  "version": "1.0.0",
+  "description": "Discover the latest trends in Chinese internet technology, AI, satellite internet, Web3, and digital infrastructure. Stay ahead of the curve with real-time insights.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8006",
+    "dev": "python3 -m http.server 8006",
+    "serve": "python3 -m http.server 8006",
+    "build": "echo 'No build step required - static HTML/CSS/JS app'",
+    "deploy": "echo 'Ready to deploy to any static hosting service'",
+    "test": "echo 'Open index.html in a browser to test'"
+  },
+  "keywords": [
+    "chinese-web",
+    "internet-technology",
+    "ai-technology",
+    "satellite-internet",
+    "web3",
+    "blockchain",
+    "digital-infrastructure",
+    "quantum-internet",
+    "chinese-tech",
+    "digital-silk-road",
+    "tech-trends",
+    "internet-innovation",
+    "chinese-innovation",
+    "tech-analysis",
+    "digital-transformation"
+  ],
+  "author": "AI Agent",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesanz/trending-app-factory.git"
+  },
+  "homepage": "https://jamesanz.github.io/trending-app-factory/apps/chinese-web-trends-hub/",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+} 
