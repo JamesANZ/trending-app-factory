@@ -57,6 +57,34 @@ trending-app-builder/
 └── package.json                   # Main project config
 ```
 
+## 🌐 Live Projects
+
+All apps are deployed and accessible at: **https://jamesanz.github.io/trending-app-factory/**
+
+### 📱 Existing Apps
+
+- **AI Coding Tools Hub** - [View App](https://jamesanz.github.io/trending-app-factory/apps/ai-coding-tools/index.html)
+  - Comprehensive guide to AI-powered development tools
+  - Built around trending "Grok Code Fast 1" and AI coding tools
+  - Port 8000 for local development
+
+- **Simple Development Hub** - [View App](https://jamesanz.github.io/trending-app-factory/apps/simple-development/index.html)
+  - Master the art of simple development with practical guides
+  - Built around trending "Do the simplest thing that could possibly work" philosophy
+  - Port 8001 for local development
+
+- **Trending News Hub** - [View App](https://jamesanz.github.io/trending-app-factory/apps/trending-news-hub/index.html)
+  - Your daily source for what's trending across all major categories
+  - Covers politics, sports, entertainment, technology, health, and space
+  - Port 8002 for local development
+
+- **College Football Hub** - [View App](https://jamesanz.github.io/trending-app-factory/apps/college-football-hub/index.html)
+  - Ultimate source for College Football news, rankings, and fantasy insights
+  - Built around trending Deion Sanders' impact and College Football season
+  - Port 8004 for local development
+
+> **⚠️ Important**: This section must be updated each time a new app is added, removed, or modified. Keep the live links current and accurate.
+
 ## 🎨 App Requirements
 
 ### Technical Stack
