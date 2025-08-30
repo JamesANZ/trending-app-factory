@@ -1,0 +1,46 @@
+{
+  "name": "israel-palestine-news-hub",
+  "version": "1.0.0",
+  "description": "Balanced news coverage of the Israel-Palestine conflict from multiple perspectives. Stay informed with real-time updates, analysis, and humanitarian perspectives.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8007",
+    "dev": "python3 -m http.server 8007",
+    "serve": "python3 -m http.server 8007",
+    "build": "echo 'No build step required - static HTML/CSS/JS app'",
+    "deploy": "echo 'Ready to deploy to any static hosting service'",
+    "test": "echo 'Open index.html in a browser to test'"
+  },
+  "keywords": [
+    "israel-palestine",
+    "middle-east",
+    "conflict-news",
+    "balanced-coverage",
+    "humanitarian-news",
+    "peace-process",
+    "international-relations",
+    "news-aggregation",
+    "multiple-perspectives",
+    "current-events",
+    "breaking-news",
+    "conflict-resolution",
+    "humanitarian-aid",
+    "peace-news",
+    "middle-east-news"
+  ],
+  "author": "AI Agent",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesanz/trending-app-factory.git"
+  },
+  "homepage": "https://jamesanz.github.io/trending-app-factory/apps/israel-palestine-news-hub/",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
