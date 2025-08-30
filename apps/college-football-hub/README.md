@@ -16,24 +16,28 @@ Based on real-time sports data and trending searches, **College Football** is th
 ## ✨ Features
 
 ### 🚀 **Trending Topics Hub**
+
 - Real-time trending topics in College Football
 - Deion Sanders' Colorado transformation
 - Season kickoff coverage and predictions
 - Heisman Trophy race analysis
 
 ### 🏆 **Team Rankings & Analysis**
+
 - Top 25 team rankings with detailed stats
 - Georgia Bulldogs (#1) - Defending champions
 - Michigan Wolverines (#2) - Big Ten power
 - Colorado Buffaloes (#4) - Prime's team generating unprecedented buzz
 
 ### ⭐ **Star Players Spotlight**
+
 - Quinn Ewers (Texas) - Heisman favorite
 - Travis Hunter (Colorado) - Two-way superstar under Deion Sanders
 - Ollie Gordon II (Oklahoma State) - Returning rushing champion
 - Detailed player stats and highlights
 
 ### 🎯 **Fantasy Football Guide**
+
 - Top QB picks and sleepers
 - RB breakout candidates
 - WR prospects to watch
@@ -41,6 +45,7 @@ Based on real-time sports data and trending searches, **College Football** is th
 - Position-by-position analysis
 
 ### 📰 **Latest News & Updates**
+
 - Breaking news and announcements
 - AP Top 25 poll updates
 - Recruiting commitments
@@ -48,6 +53,7 @@ Based on real-time sports data and trending searches, **College Football** is th
 - Live updates and notifications
 
 ### 📧 **Newsletter Subscription**
+
 - Stay updated with daily College Football news
 - Exclusive rankings and fantasy insights
 - Join 50,000+ College Football fans
@@ -64,17 +70,21 @@ Based on real-time sports data and trending searches, **College Football** is th
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Python 3.x (for local development server)
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 
 ### Installation
+
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/college-football-hub.git
    cd college-football-hub
    ```
 
 2. Start the local development server:
+
    ```bash
    python3 -m http.server 8004
    ```
@@ -87,11 +97,13 @@ Based on real-time sports data and trending searches, **College Football** is th
 ### Alternative Development Servers
 
 **Using Node.js:**
+
 ```bash
 npx http-server -p 8004
 ```
 
 **Using PHP:**
+
 ```bash
 php -S localhost:8004
 ```
@@ -99,6 +111,7 @@ php -S localhost:8004
 ## 📱 Responsive Design
 
 The app is fully responsive and optimized for:
+
 - **Desktop**: 1200px+ (full feature set)
 - **Tablet**: 768px - 1199px (optimized layout)
 - **Mobile**: 320px - 767px (mobile-first design)
@@ -114,7 +127,9 @@ The app is fully responsive and optimized for:
 ## 🔧 Customization
 
 ### Colors
+
 The app uses CSS custom properties for easy color customization:
+
 ```css
 :root {
   --primary-blue: #1e3a8a;
@@ -126,6 +141,7 @@ The app uses CSS custom properties for easy color customization:
 ```
 
 ### Content Updates
+
 - **Trending Topics**: Update in `script.js` under `showTrendingDetails()`
 - **Team Rankings**: Modify team data in `script.js` under `showTeamDetails()`
 - **Player Stats**: Update player information in `script.js` under `showPlayerStats()`
@@ -155,6 +171,7 @@ The app uses CSS custom properties for easy color customization:
 ## 🚀 Deployment
 
 ### Static Hosting
+
 The app is ready for deployment on any static hosting service:
 
 - **Netlify**: Drag and drop the folder
@@ -164,6 +181,7 @@ The app is ready for deployment on any static hosting service:
 - **Traditional Web Server**: Upload to any web server
 
 ### Build Process
+
 No build step required - it's a static HTML/CSS/JS application.
 
 ## 🤝 Contributing
@@ -188,6 +206,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For support, questions, or feature requests:
+
 - Create an issue in the GitHub repository
 - Contact the development team
 - Check the documentation
@@ -205,4 +224,4 @@ For support, questions, or feature requests:
 
 **🏈 College Football Hub** - Where passion meets information. Built for the greatest sport on Earth.
 
-*Last updated: August 30, 2025* 
+_Last updated: August 30, 2025_

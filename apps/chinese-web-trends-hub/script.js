@@ -1,191 +1,204 @@
-document.addEventListener('DOMContentLoaded', function() {
-    initSmoothScrolling();
-    initFormHandling();
-    initScrollAnimations();
-    initInteractiveElements();
-    initNewsletterForm();
-    initTrendCards();
-    initTechCards();
-    initNewsCards();
-    initTimelineAnimation();
+document.addEventListener("DOMContentLoaded", function () {
+  initSmoothScrolling();
+  initFormHandling();
+  initScrollAnimations();
+  initInteractiveElements();
+  initNewsletterForm();
+  initTrendCards();
+  initTechCards();
+  initNewsCards();
+  initTimelineAnimation();
 });
 
 // Smooth scrolling for navigation links
 function initSmoothScrolling() {
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
         });
+      }
     });
+  });
 }
 
 // Form handling for newsletter subscription
 function initFormHandling() {
-    const forms = document.querySelectorAll('form');
-    
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value;
-            
-            if (email) {
-                showNotification('Thank you for subscribing to Chinese Web Trends!', 'success');
-                emailInput.value = '';
-            }
-        });
+  const forms = document.querySelectorAll("form");
+
+  forms.forEach((form) => {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const emailInput = this.querySelector('input[type="email"]');
+      const email = emailInput.value;
+
+      if (email) {
+        showNotification(
+          "Thank you for subscribing to Chinese Web Trends!",
+          "success",
+        );
+        emailInput.value = "";
+      }
     });
+  });
 }
 
 // Scroll animations for elements
 function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-    
-    const animatedElements = document.querySelectorAll('.trend-card, .tech-card, .insight-card, .news-card');
-    animatedElements.forEach(el => observer.observe(el));
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-in");
+      }
+    });
+  }, observerOptions);
+
+  const animatedElements = document.querySelectorAll(
+    ".trend-card, .tech-card, .insight-card, .news-card",
+  );
+  animatedElements.forEach((el) => observer.observe(el));
 }
 
 // Interactive elements
 function initInteractiveElements() {
-    // CTA button interaction
-    const ctaButton = document.querySelector('.cta-button');
-    if (ctaButton) {
-        ctaButton.addEventListener('click', function() {
-            document.querySelector('#trends').scrollIntoView({ behavior: 'smooth' });
-        });
-    }
-    
-    // Add hover effects to cards
-    const cards = document.querySelectorAll('.trend-card, .tech-card, .insight-card, .news-card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
+  // CTA button interaction
+  const ctaButton = document.querySelector(".cta-button");
+  if (ctaButton) {
+    ctaButton.addEventListener("click", function () {
+      document.querySelector("#trends").scrollIntoView({ behavior: "smooth" });
     });
+  }
+
+  // Add hover effects to cards
+  const cards = document.querySelectorAll(
+    ".trend-card, .tech-card, .insight-card, .news-card",
+  );
+  cards.forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      this.style.transform = "translateY(-10px)";
+    });
+
+    card.addEventListener("mouseleave", function () {
+      this.style.transform = "translateY(0)";
+    });
+  });
 }
 
 // Newsletter form functionality
 function initNewsletterForm() {
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value;
-            
-            if (validateEmail(email)) {
-                showNotification('Successfully subscribed to Chinese Web Trends updates!', 'success');
-                emailInput.value = '';
-            } else {
-                showNotification('Please enter a valid email address.', 'error');
-            }
-        });
-    }
+  const newsletterForm = document.querySelector(".newsletter-form");
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const emailInput = this.querySelector('input[type="email"]');
+      const email = emailInput.value;
+
+      if (validateEmail(email)) {
+        showNotification(
+          "Successfully subscribed to Chinese Web Trends updates!",
+          "success",
+        );
+        emailInput.value = "";
+      } else {
+        showNotification("Please enter a valid email address.", "error");
+      }
+    });
+  }
 }
 
 // Trend cards interaction
 function initTrendCards() {
-    const trendCards = document.querySelectorAll('.trend-card');
-    
-    trendCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const title = this.querySelector('h3').textContent;
-            showTrendDetails(title);
-        });
-        
-        // Add pulse animation on hover
-        card.addEventListener('mouseenter', function() {
-            this.style.animation = 'pulse 1s infinite';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.animation = 'none';
-        });
+  const trendCards = document.querySelectorAll(".trend-card");
+
+  trendCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const title = this.querySelector("h3").textContent;
+      showTrendDetails(title);
     });
+
+    // Add pulse animation on hover
+    card.addEventListener("mouseenter", function () {
+      this.style.animation = "pulse 1s infinite";
+    });
+
+    card.addEventListener("mouseleave", function () {
+      this.style.animation = "none";
+    });
+  });
 }
 
 // Tech cards interaction
 function initTechCards() {
-    const techCards = document.querySelectorAll('.tech-card');
-    
-    techCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const title = this.querySelector('h3').textContent;
-            const badge = this.querySelector('.tech-badge').textContent;
-            showTechDetails(title, badge);
-        });
+  const techCards = document.querySelectorAll(".tech-card");
+
+  techCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const title = this.querySelector("h3").textContent;
+      const badge = this.querySelector(".tech-badge").textContent;
+      showTechDetails(title, badge);
     });
+  });
 }
 
 // News cards interaction
 function initNewsCards() {
-    const newsCards = document.querySelectorAll('.news-card');
-    
-    newsCards.forEach(card => {
-        const readMoreLink = card.querySelector('.read-more');
-        if (readMoreLink) {
-            readMoreLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                const title = card.querySelector('h3').textContent;
-                const category = card.querySelector('.news-category').textContent;
-                showNewsDetails(title, category);
-            });
-        }
-    });
+  const newsCards = document.querySelectorAll(".news-card");
+
+  newsCards.forEach((card) => {
+    const readMoreLink = card.querySelector(".read-more");
+    if (readMoreLink) {
+      readMoreLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        const title = card.querySelector("h3").textContent;
+        const category = card.querySelector(".news-category").textContent;
+        showNewsDetails(title, category);
+      });
+    }
+  });
 }
 
 // Timeline animation
 function initTimelineAnimation() {
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    
-    const timelineObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateX(0)';
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    timelineItems.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateX(-20px)';
-        item.style.transition = `opacity 0.5s ease ${index * 0.2}s, transform 0.5s ease ${index * 0.2}s`;
-        timelineObserver.observe(item);
-    });
+  const timelineItems = document.querySelectorAll(".timeline-item");
+
+  const timelineObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateX(0)";
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  timelineItems.forEach((item, index) => {
+    item.style.opacity = "0";
+    item.style.transform = "translateX(-20px)";
+    item.style.transition = `opacity 0.5s ease ${index * 0.2}s, transform 0.5s ease ${index * 0.2}s`;
+    timelineObserver.observe(item);
+  });
 }
 
 // Show trend details modal
 function showTrendDetails(title) {
-    const modal = document.createElement('div');
-    modal.className = 'trend-modal';
-    modal.innerHTML = `
+  const modal = document.createElement("div");
+  modal.className = "trend-modal";
+  modal.innerHTML = `
         <div class="modal-content">
             <div class="modal-header">
                 <h2>${title}</h2>
@@ -207,12 +220,12 @@ function showTrendDetails(title) {
             </div>
         </div>
     `;
-    
-    document.body.appendChild(modal);
-    
-    // Add modal styles
-    const style = document.createElement('style');
-    style.textContent = `
+
+  document.body.appendChild(modal);
+
+  // Add modal styles
+  const style = document.createElement("style");
+  style.textContent = `
         .trend-modal {
             position: fixed;
             top: 0;
@@ -281,26 +294,26 @@ function showTrendDetails(title) {
             margin-bottom: 0.5rem;
         }
     `;
-    document.head.appendChild(style);
-    
-    // Close modal functionality
-    const closeBtn = modal.querySelector('.close-modal');
-    closeBtn.addEventListener('click', () => {
-        document.body.removeChild(modal);
-    });
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            document.body.removeChild(modal);
-        }
-    });
+  document.head.appendChild(style);
+
+  // Close modal functionality
+  const closeBtn = modal.querySelector(".close-modal");
+  closeBtn.addEventListener("click", () => {
+    document.body.removeChild(modal);
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      document.body.removeChild(modal);
+    }
+  });
 }
 
 // Show tech details modal
 function showTechDetails(title, badge) {
-    const modal = document.createElement('div');
-    modal.className = 'tech-modal';
-    modal.innerHTML = `
+  const modal = document.createElement("div");
+  modal.className = "tech-modal";
+  modal.innerHTML = `
         <div class="modal-content">
             <div class="modal-header">
                 <h2>${title}</h2>
@@ -323,12 +336,12 @@ function showTechDetails(title, badge) {
             </div>
         </div>
     `;
-    
-    document.body.appendChild(modal);
-    
-    // Add modal styles (similar to trend modal)
-    const style = document.createElement('style');
-    style.textContent = `
+
+  document.body.appendChild(modal);
+
+  // Add modal styles (similar to trend modal)
+  const style = document.createElement("style");
+  style.textContent = `
         .tech-modal {
             position: fixed;
             top: 0;
@@ -397,26 +410,26 @@ function showTechDetails(title, badge) {
             margin-bottom: 0.5rem;
         }
     `;
-    document.head.appendChild(style);
-    
-    // Close modal functionality
-    const closeBtn = modal.querySelector('.close-modal');
-    closeBtn.addEventListener('click', () => {
-        document.body.removeChild(modal);
-    });
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            document.body.removeChild(modal);
-        }
-    });
+  document.head.appendChild(style);
+
+  // Close modal functionality
+  const closeBtn = modal.querySelector(".close-modal");
+  closeBtn.addEventListener("click", () => {
+    document.body.removeChild(modal);
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      document.body.removeChild(modal);
+    }
+  });
 }
 
 // Show news details modal
 function showNewsDetails(title, category) {
-    const modal = document.createElement('div');
-    modal.className = 'news-modal';
-    modal.innerHTML = `
+  const modal = document.createElement("div");
+  modal.className = "news-modal";
+  modal.innerHTML = `
         <div class="modal-content">
             <div class="modal-header">
                 <h2>${title}</h2>
@@ -439,12 +452,12 @@ function showNewsDetails(title, category) {
             </div>
         </div>
     `;
-    
-    document.body.appendChild(modal);
-    
-    // Add modal styles (similar to other modals)
-    const style = document.createElement('style');
-    style.textContent = `
+
+  document.body.appendChild(modal);
+
+  // Add modal styles (similar to other modals)
+  const style = document.createElement("style");
+  style.textContent = `
         .news-modal {
             position: fixed;
             top: 0;
@@ -513,36 +526,36 @@ function showNewsDetails(title, category) {
             margin-bottom: 0.5rem;
         }
     `;
-    document.head.appendChild(style);
-    
-    // Close modal functionality
-    const closeBtn = modal.querySelector('.close-modal');
-    closeBtn.addEventListener('click', () => {
-        document.body.removeChild(modal);
-    });
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            document.body.removeChild(modal);
-        }
-    });
+  document.head.appendChild(style);
+
+  // Close modal functionality
+  const closeBtn = modal.querySelector(".close-modal");
+  closeBtn.addEventListener("click", () => {
+    document.body.removeChild(modal);
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      document.body.removeChild(modal);
+    }
+  });
 }
 
 // Email validation
 function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
 }
 
 // Show notification
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.textContent = message;
-    
-    // Add notification styles
-    const style = document.createElement('style');
-    style.textContent = `
+function showNotification(message, type = "info") {
+  const notification = document.createElement("div");
+  notification.className = `notification notification-${type}`;
+  notification.textContent = message;
+
+  // Add notification styles
+  const style = document.createElement("style");
+  style.textContent = `
         .notification {
             position: fixed;
             top: 20px;
@@ -578,20 +591,20 @@ function showNotification(message, type = 'info') {
             }
         }
     `;
-    document.head.appendChild(style);
-    
-    document.body.appendChild(notification);
-    
-    // Remove notification after 3 seconds
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.parentNode.removeChild(notification);
-        }
-    }, 3000);
+  document.head.appendChild(style);
+
+  document.body.appendChild(notification);
+
+  // Remove notification after 3 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.parentNode.removeChild(notification);
+    }
+  }, 3000);
 }
 
 // Add CSS animations
-const animationStyle = document.createElement('style');
+const animationStyle = document.createElement("style");
 animationStyle.textContent = `
     @keyframes pulse {
         0% { transform: scale(1); }
@@ -631,4 +644,4 @@ animationStyle.textContent = `
         transform: translateY(0);
     }
 `;
-document.head.appendChild(animationStyle); 
+document.head.appendChild(animationStyle);

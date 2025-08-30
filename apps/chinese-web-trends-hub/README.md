@@ -18,26 +18,31 @@ Based on real-time technology news and market research, **Chinese Internet Techn
 ## 🚀 Key Features
 
 ### Trending Topics Section
+
 - Real-time trending topics in Chinese web technology
 - Interactive trend cards with detailed metrics
 - Global impact analysis and investment potential
 
 ### Revolutionary Technologies
+
 - **Quantum Internet**: Breakthrough in secure communications
 - **Ultra-Fast Internet**: World record internet speeds
 - **New IP Protocol**: China's vision for future internet architecture
 
 ### Market Insights
+
 - **Market Dynamics**: 1.12 billion internet users in China
 - **Regulatory Landscape**: Beijing's control over tech giants
 - **Global Impact**: Underwater cables, quantum development, satellite exports
 
 ### Trend Analysis
+
 - Timeline of Chinese web technology evolution (2020-2024)
 - Statistical analysis of internet users, tech companies, and global projects
 - Future outlook and development roadmap
 
 ### Latest News & Updates
+
 - AI Technology developments
 - Infrastructure breakthroughs
 - Web3 and blockchain innovations
@@ -62,6 +67,7 @@ Based on real-time technology news and market research, **Chinese Internet Techn
 ## 📱 Responsive Design
 
 The application is fully responsive and optimized for:
+
 - Desktop computers (1200px+)
 - Tablets (768px - 1199px)
 - Mobile devices (320px - 767px)
@@ -69,17 +75,21 @@ The application is fully responsive and optimized for:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Python 3.x (for local development server)
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 
 ### Installation
+
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/jamesanz/trending-app-factory.git
    cd trending-app-factory/apps/chinese-web-trends-hub
    ```
 
 2. Start the local development server:
+
    ```bash
    python3 -m http.server 8006
    ```
@@ -92,11 +102,13 @@ The application is fully responsive and optimized for:
 ### Alternative Development Servers
 
 #### Using Node.js
+
 ```bash
 npx http-server -p 8006
 ```
 
 #### Using Python (alternative)
+
 ```bash
 python -m http.server 8006
 ```
@@ -116,6 +128,7 @@ chinese-web-trends-hub/
 ## 🌐 Deployment
 
 ### Local Development
+
 - **Port**: 8006
 - **Command**: `python3 -m http.server 8006`
 - **URL**: `http://localhost:8006`
@@ -123,21 +136,25 @@ chinese-web-trends-hub/
 ### Production Deployment
 
 #### Netlify
+
 1. Drag and drop the `chinese-web-trends-hub` folder to Netlify
 2. Automatic deployment and HTTPS
 3. Custom domain support
 
 #### Vercel
+
 1. Import the repository to Vercel
 2. Automatic builds and deployments
 3. Global CDN and edge functions
 
 #### GitHub Pages
+
 1. Push to GitHub repository
 2. Enable GitHub Pages in repository settings
 3. Deploy from main branch
 
 #### Traditional Web Server
+
 1. Upload files to your web server
 2. Configure server for static file serving
 3. Set up domain and SSL certificate
@@ -145,18 +162,22 @@ chinese-web-trends-hub/
 ## 🔧 Customization
 
 ### Colors
+
 The app uses a Chinese-inspired color scheme that can be customized in `style.css`:
+
 - Primary Red: `#d32f2f`
 - Secondary Orange: `#f57c00`
 - Accent Gold: `#ffd700`
 
 ### Content
+
 - Update trending topics in `index.html`
 - Modify technology descriptions
 - Add new news articles
 - Customize timeline events
 
 ### Features
+
 - Add new interactive elements
 - Implement additional animations
 - Extend modal functionality
@@ -206,10 +227,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 📞 Support
 
 For questions, issues, or contributions:
+
 - Create an issue in the GitHub repository
 - Contact the development team
 - Check the documentation for common solutions
 
 ---
 
-**Chinese Web Trends Hub** - Your gateway to understanding China's internet technology revolution and its global impact. 🚀🌐🇨🇳 
+**Chinese Web Trends Hub** - Your gateway to understanding China's internet technology revolution and its global impact. 🚀🌐🇨🇳

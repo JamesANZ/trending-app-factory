@@ -1,89 +1,92 @@
 // Simple Development Hub - Interactive Features
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all interactive features
-    initSmoothScrolling();
-    initNewsletterForm();
-    initScrollAnimations();
-    initPrincipleCards();
-    initExampleCards();
-    initToolCards();
-    initCommunityStats();
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize all interactive features
+  initSmoothScrolling();
+  initNewsletterForm();
+  initScrollAnimations();
+  initPrincipleCards();
+  initExampleCards();
+  initToolCards();
+  initCommunityStats();
 });
 
 // Smooth scrolling for navigation links
 function initSmoothScrolling() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
         });
+      }
     });
+  });
 }
 
 // Newsletter form handling
 function initNewsletterForm() {
-    const newsletterForm = document.querySelector('.newsletter-form');
-    
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value.trim();
-            
-            if (email && isValidEmail(email)) {
-                // Simulate successful subscription
-                showNotification('🎉 Successfully subscribed! Welcome to the Simple Development movement.', 'success');
-                emailInput.value = '';
-                
-                // Update community stats
-                updateCommunityStats();
-            } else {
-                showNotification('Please enter a valid email address.', 'error');
-            }
-        });
-    }
+  const newsletterForm = document.querySelector(".newsletter-form");
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const emailInput = this.querySelector('input[type="email"]');
+      const email = emailInput.value.trim();
+
+      if (email && isValidEmail(email)) {
+        // Simulate successful subscription
+        showNotification(
+          "🎉 Successfully subscribed! Welcome to the Simple Development movement.",
+          "success",
+        );
+        emailInput.value = "";
+
+        // Update community stats
+        updateCommunityStats();
+      } else {
+        showNotification("Please enter a valid email address.", "error");
+      }
+    });
+  }
 }
 
 // Email validation
 function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
 
 // Show notification
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-        existingNotification.remove();
-    }
-    
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
+function showNotification(message, type = "info") {
+  // Remove existing notifications
+  const existingNotification = document.querySelector(".notification");
+  if (existingNotification) {
+    existingNotification.remove();
+  }
+
+  // Create notification element
+  const notification = document.createElement("div");
+  notification.className = `notification notification-${type}`;
+  notification.innerHTML = `
         <span class="notification-message">${message}</span>
         <button class="notification-close">&times;</button>
     `;
-    
-    // Add styles
-    notification.style.cssText = `
+
+  // Add styles
+  notification.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
-        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+        background: ${type === "success" ? "#10b981" : type === "error" ? "#ef4444" : "#3b82f6"};
         color: white;
         padding: 1rem 1.5rem;
         border-radius: 8px;
@@ -95,26 +98,26 @@ function showNotification(message, type = 'info') {
         max-width: 400px;
         animation: slideInRight 0.3s ease;
     `;
-    
-    // Add close button functionality
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        notification.remove();
-    });
-    
-    // Auto-remove after 5 seconds
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.remove();
-        }
-    }, 5000);
-    
-    // Add to page
-    document.body.appendChild(notification);
-    
-    // Add CSS animation
-    const style = document.createElement('style');
-    style.textContent = `
+
+  // Add close button functionality
+  const closeBtn = notification.querySelector(".notification-close");
+  closeBtn.addEventListener("click", () => {
+    notification.remove();
+  });
+
+  // Auto-remove after 5 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.remove();
+    }
+  }, 5000);
+
+  // Add to page
+  document.body.appendChild(notification);
+
+  // Add CSS animation
+  const style = document.createElement("style");
+  style.textContent = `
         @keyframes slideInRight {
             from {
                 transform: translateX(100%);
@@ -126,187 +129,195 @@ function showNotification(message, type = 'info') {
             }
         }
     `;
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 }
 
 // Scroll animations
 function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe all cards and sections
-    const animatedElements = document.querySelectorAll('.principle-card, .example-card, .tool-card, .stat');
-    animatedElements.forEach(el => {
-        observer.observe(el);
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-in");
+      }
     });
+  }, observerOptions);
+
+  // Observe all cards and sections
+  const animatedElements = document.querySelectorAll(
+    ".principle-card, .example-card, .tool-card, .stat",
+  );
+  animatedElements.forEach((el) => {
+    observer.observe(el);
+  });
 }
 
 // Principle cards interactions
 function initPrincipleCards() {
-    const principleCards = document.querySelectorAll('.principle-card');
-    
-    principleCards.forEach(card => {
-        card.addEventListener('click', function() {
-            // Add click effect
-            this.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-            
-            // Show principle details
-            const title = this.querySelector('h3').textContent;
-            const description = this.querySelector('p').textContent;
-            
-            showPrincipleModal(title, description);
-        });
+  const principleCards = document.querySelectorAll(".principle-card");
+
+  principleCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      // Add click effect
+      this.style.transform = "scale(0.98)";
+      setTimeout(() => {
+        this.style.transform = "";
+      }, 150);
+
+      // Show principle details
+      const title = this.querySelector("h3").textContent;
+      const description = this.querySelector("p").textContent;
+
+      showPrincipleModal(title, description);
     });
+  });
 }
 
 // Example cards interactions
 function initExampleCards() {
-    const exampleCards = document.querySelectorAll('.example-card');
-    
-    exampleCards.forEach(card => {
-        card.addEventListener('click', function() {
-            // Add click effect
-            this.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-            
-            // Show example details
-            const title = this.querySelector('h3').textContent;
-            const description = this.querySelector('.example-description').textContent;
-            const tags = Array.from(this.querySelectorAll('.tag')).map(tag => tag.textContent);
-            
-            showExampleModal(title, description, tags);
-        });
+  const exampleCards = document.querySelectorAll(".example-card");
+
+  exampleCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      // Add click effect
+      this.style.transform = "scale(0.98)";
+      setTimeout(() => {
+        this.style.transform = "";
+      }, 150);
+
+      // Show example details
+      const title = this.querySelector("h3").textContent;
+      const description = this.querySelector(
+        ".example-description",
+      ).textContent;
+      const tags = Array.from(this.querySelectorAll(".tag")).map(
+        (tag) => tag.textContent,
+      );
+
+      showExampleModal(title, description, tags);
     });
+  });
 }
 
 // Tool cards interactions
 function initToolCards() {
-    const toolCards = document.querySelectorAll('.tool-card');
-    
-    toolCards.forEach(card => {
-        card.addEventListener('click', function() {
-            // Add click effect
-            this.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-            
-            // Show tool details
-            const title = this.querySelector('h3').textContent;
-            const description = this.querySelector('p').textContent;
-            const benefits = Array.from(this.querySelectorAll('.tool-benefits span')).map(benefit => benefit.textContent);
-            
-            showToolModal(title, description, benefits);
-        });
+  const toolCards = document.querySelectorAll(".tool-card");
+
+  toolCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      // Add click effect
+      this.style.transform = "scale(0.98)";
+      setTimeout(() => {
+        this.style.transform = "";
+      }, 150);
+
+      // Show tool details
+      const title = this.querySelector("h3").textContent;
+      const description = this.querySelector("p").textContent;
+      const benefits = Array.from(
+        this.querySelectorAll(".tool-benefits span"),
+      ).map((benefit) => benefit.textContent);
+
+      showToolModal(title, description, benefits);
     });
+  });
 }
 
 // Community stats interactions
 function initCommunityStats() {
-    const stats = document.querySelectorAll('.stat');
-    
-    stats.forEach(stat => {
-        stat.addEventListener('click', function() {
-            // Add click effect
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-            
-            // Animate number
-            const numberElement = this.querySelector('.stat-number');
-            const finalNumber = parseInt(numberElement.textContent);
-            animateNumber(numberElement, 0, finalNumber, 1000);
-        });
+  const stats = document.querySelectorAll(".stat");
+
+  stats.forEach((stat) => {
+    stat.addEventListener("click", function () {
+      // Add click effect
+      this.style.transform = "scale(0.95)";
+      setTimeout(() => {
+        this.style.transform = "";
+      }, 150);
+
+      // Animate number
+      const numberElement = this.querySelector(".stat-number");
+      const finalNumber = parseInt(numberElement.textContent);
+      animateNumber(numberElement, 0, finalNumber, 1000);
     });
+  });
 }
 
 // Animate number counting
 function animateNumber(element, start, end, duration) {
-    const startTime = performance.now();
-    
-    function updateNumber(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        const current = Math.floor(start + (end - start) * progress);
-        element.textContent = current;
-        
-        if (progress < 1) {
-            requestAnimationFrame(updateNumber);
-        }
+  const startTime = performance.now();
+
+  function updateNumber(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    const current = Math.floor(start + (end - start) * progress);
+    element.textContent = current;
+
+    if (progress < 1) {
+      requestAnimationFrame(updateNumber);
     }
-    
-    requestAnimationFrame(updateNumber);
+  }
+
+  requestAnimationFrame(updateNumber);
 }
 
 // Update community stats (simulate growth)
 function updateCommunityStats() {
-    const stats = document.querySelectorAll('.stat-number');
-    
-    stats.forEach((stat, index) => {
-        const currentValue = parseInt(stat.textContent);
-        const newValue = currentValue + Math.floor(Math.random() * 5) + 1;
-        
-        animateNumber(stat, currentValue, newValue, 1000);
-    });
+  const stats = document.querySelectorAll(".stat-number");
+
+  stats.forEach((stat, index) => {
+    const currentValue = parseInt(stat.textContent);
+    const newValue = currentValue + Math.floor(Math.random() * 5) + 1;
+
+    animateNumber(stat, currentValue, newValue, 1000);
+  });
 }
 
 // Show principle modal
 function showPrincipleModal(title, description) {
-    showModal(`🎯 ${title}`, description, 'principle');
+  showModal(`🎯 ${title}`, description, "principle");
 }
 
 // Show example modal
 function showExampleModal(title, description, tags) {
-    const content = `
+  const content = `
         <p>${description}</p>
         <div class="modal-tags">
-            ${tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            ${tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
         </div>
     `;
-    showModal(`💻 ${title}`, content, 'example');
+  showModal(`💻 ${title}`, content, "example");
 }
 
 // Show tool modal
 function showToolModal(title, description, benefits) {
-    const content = `
+  const content = `
         <p>${description}</p>
         <h4>Key Benefits:</h4>
         <ul>
-            ${benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+            ${benefits.map((benefit) => `<li>${benefit}</li>`).join("")}
         </ul>
     `;
-    showModal(`🛠️ ${title}`, content, 'tool');
+  showModal(`🛠️ ${title}`, content, "tool");
 }
 
 // Generic modal function
 function showModal(title, content, type) {
-    // Remove existing modals
-    const existingModal = document.querySelector('.modal');
-    if (existingModal) {
-        existingModal.remove();
-    }
-    
-    // Create modal
-    const modal = document.createElement('div');
-    modal.className = 'modal';
-    modal.innerHTML = `
+  // Remove existing modals
+  const existingModal = document.querySelector(".modal");
+  if (existingModal) {
+    existingModal.remove();
+  }
+
+  // Create modal
+  const modal = document.createElement("div");
+  modal.className = "modal";
+  modal.innerHTML = `
         <div class="modal-content modal-${type}">
             <div class="modal-header">
                 <h3>${title}</h3>
@@ -317,10 +328,10 @@ function showModal(title, content, type) {
             </div>
         </div>
     `;
-    
-    // Add modal styles
-    const style = document.createElement('style');
-    style.textContent = `
+
+  // Add modal styles
+  const style = document.createElement("style");
+  style.textContent = `
         .modal {
             position: fixed;
             top: 0;
@@ -426,35 +437,35 @@ function showModal(title, content, type) {
             }
         }
     `;
-    document.head.appendChild(style);
-    
-    // Add close functionality
-    const closeBtn = modal.querySelector('.modal-close');
-    closeBtn.addEventListener('click', () => {
-        modal.remove();
-    });
-    
-    // Close on outside click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.remove();
-        }
-    });
-    
-    // Close on Escape key
-    document.addEventListener('keydown', function closeOnEscape(e) {
-        if (e.key === 'Escape') {
-            modal.remove();
-            document.removeEventListener('keydown', closeOnEscape);
-        }
-    });
-    
-    // Add to page
-    document.body.appendChild(modal);
+  document.head.appendChild(style);
+
+  // Add close functionality
+  const closeBtn = modal.querySelector(".modal-close");
+  closeBtn.addEventListener("click", () => {
+    modal.remove();
+  });
+
+  // Close on outside click
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.remove();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", function closeOnEscape(e) {
+    if (e.key === "Escape") {
+      modal.remove();
+      document.removeEventListener("keydown", closeOnEscape);
+    }
+  });
+
+  // Add to page
+  document.body.appendChild(modal);
 }
 
 // Add CSS for animations
-const animationStyle = document.createElement('style');
+const animationStyle = document.createElement("style");
 animationStyle.textContent = `
     .principle-card, .example-card, .tool-card, .stat {
         opacity: 0;
@@ -492,35 +503,35 @@ animationStyle.textContent = `
 document.head.appendChild(animationStyle);
 
 // Add some fun interactions
-document.addEventListener('DOMContentLoaded', function() {
-    // Add hover effects to trending badge
-    const trendingBadge = document.querySelector('.trending-badge');
-    if (trendingBadge) {
-        trendingBadge.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05) rotate(2deg)';
-        });
-        
-        trendingBadge.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1) rotate(0deg)';
-        });
-    }
-    
-    // Add typing effect to hero title
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < text.length) {
-                heroTitle.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        };
-        
-        // Start typing after a short delay
-        setTimeout(typeWriter, 500);
-    }
-}); 
+document.addEventListener("DOMContentLoaded", function () {
+  // Add hover effects to trending badge
+  const trendingBadge = document.querySelector(".trending-badge");
+  if (trendingBadge) {
+    trendingBadge.addEventListener("mouseenter", function () {
+      this.style.transform = "scale(1.05) rotate(2deg)";
+    });
+
+    trendingBadge.addEventListener("mouseleave", function () {
+      this.style.transform = "scale(1) rotate(0deg)";
+    });
+  }
+
+  // Add typing effect to hero title
+  const heroTitle = document.querySelector(".hero-title");
+  if (heroTitle) {
+    const text = heroTitle.textContent;
+    heroTitle.textContent = "";
+
+    let i = 0;
+    const typeWriter = () => {
+      if (i < text.length) {
+        heroTitle.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    };
+
+    // Start typing after a short delay
+    setTimeout(typeWriter, 500);
+  }
+});
