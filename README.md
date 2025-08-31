@@ -7,6 +7,7 @@ This project automatically identifies current trending topics, events, and conve
 ## 🎯 What This Project Does
 
 Instead of building apps for general topics, we focus on **CURRENT TRENDING EVENTS** such as:
+
 - Breaking news and global events
 - Current conflicts and humanitarian crises
 - Trending social movements
@@ -37,7 +38,8 @@ trending-app-factory/
 │   ├── college-football-hub/   # Sports trends
 │   ├── ai-wellness-hub/        # Health & wellness trends
 │   ├── chinese-web-trends-hub/ # Chinese tech trends
-│   └── israel-palestine-news-hub/ # Current conflict news
+│   ├── israel-palestine-news-hub/ # Current conflict news
+│   └── college-football-weekend-hub/ # College football opening weekend
 └── deploy.sh                 # Deployment script
 ```
 
@@ -77,13 +79,19 @@ Access all deployed applications here:
   - Balanced news coverage of the Israel-Palestine conflict from multiple perspectives
   - Built around current trending conflict news and humanitarian updates
   - Port 8007 for local development
+- **College Football Weekend Hub** - [View App](https://jamesanz.github.io/trending-app-factory/apps/college-football-weekend-hub/index.html)
+  - Live coverage of College Football opening weekend 2025 with major upsets and storylines
+  - Built around current trending college football upsets including Alabama vs FSU and Arch Manning's debut
+  - Port 8008 for local development
 
 > **⚠️ Important**: This section must be updated each time a new app is added, removed, or modified. Keep the live links current and accurate.
 
 ## 🚀 How to Use
 
 ### 1. Identify Current Trends
+
 Research what's trending RIGHT NOW:
+
 - Google Trends
 - Twitter/X trending topics
 - Reddit r/popular
@@ -92,7 +100,9 @@ Research what's trending RIGHT NOW:
 - Current events and breaking news
 
 ### 2. Build the App
+
 Create a web application that provides value around the trending topic:
+
 - News aggregation
 - Information resources
 - Interactive tools
@@ -100,6 +110,7 @@ Create a web application that provides value around the trending topic:
 - Community features
 
 ### 3. Deploy and Share
+
 Get the app live quickly to capture trending interest.
 
 ## 🛠️ Technology Stack
@@ -112,6 +123,7 @@ Get the app live quickly to capture trending interest.
 ## 📱 App Features
 
 Each trending topic app includes:
+
 - **Responsive Design**: Mobile-first approach
 - **Modern UI/UX**: Clean, intuitive interfaces
 - **Interactive Elements**: Engaging user interactions
