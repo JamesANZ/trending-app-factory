@@ -1,0 +1,51 @@
+{
+  "name": "college-football-weekend-hub",
+  "version": "1.0.0",
+  "description": "Live coverage of College Football opening weekend 2025. Track upsets, highlights, scores, and breaking news from the biggest games of the season.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8008",
+    "dev": "python3 -m http.server 8008",
+    "serve": "python3 -m http.server 8008",
+    "build": "echo 'No build step required - static HTML/CSS/JS app'",
+    "deploy": "echo 'Ready to deploy to any static hosting service'",
+    "test": "echo 'Open index.html in a browser to test'"
+  },
+  "keywords": [
+    "college-football",
+    "football",
+    "sports",
+    "live-scores",
+    "upsets",
+    "highlights",
+    "rankings",
+    "alabama",
+    "florida-state",
+    "texas",
+    "ohio-state",
+    "arch-manning",
+    "tommy-castellanos",
+    "opening-weekend",
+    "college-sports",
+    "ncaa-football",
+    "sports-news",
+    "game-results",
+    "football-highlights",
+    "sports-analysis"
+  ],
+  "author": "AI Agent",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesanz/trending-app-factory.git"
+  },
+  "homepage": "https://jamesanz.github.io/trending-app-factory/apps/college-football-weekend-hub/",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
