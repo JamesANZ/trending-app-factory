@@ -1,0 +1,17 @@
+{
+  "name": "afl-finals-2025-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AFL Finals 2025 Hub — fixtures, tickets, curated news, and tools (ICS export).",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "compression": "^1.7.4"
+  }
+}
